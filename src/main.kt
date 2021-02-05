@@ -1,12 +1,20 @@
 fun main(){
-    println("Bem vindo ao bytebank!")
-    val titular = "Ariel"
-    println("Olá $titular, como você está hoje?")
-    val numeroConta = 5362
-    println("Número da conta: $numeroConta")
-    var saldoConta = 0
-    saldoConta = 100
-    saldoConta += 205
-    println("Saldo da sua conta: $saldoConta R$")
+    println("Bem vindo ao Bytebank")
+    val titular: String = "Ariel"
+    val numeroConta: Int = 1000
+    var saldo = 0.0
+    saldo = 100 + 2.0
+    saldo += 200
 
+    println("titular $titular")
+    println("número da conta $numeroConta")
+    println("saldo da conta $saldo")
+
+    if (saldo > 0.0){
+        println("Conta é positiva")
+    } else if (saldo == 0.0){
+        println("Conta é neutra")
+    } else {
+        println("Conta é negativa")
+    }
 }
