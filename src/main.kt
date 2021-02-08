@@ -18,6 +18,19 @@ fun main() {
     println(contaCamily.titular)
     println(contaCamily.numeroConta)
     println(contaCamily.saldo)
+
+    println("Depositando na conta do Ariel")
+    deposita(contaAriel, 100.0)
+    println(contaAriel.saldo)
+
+    println("Depositando na conta da Camily")
+    deposita(contaCamily, 300.0)
+    println(contaCamily.saldo)
+
+}
+
+fun deposita(conta: Conta, valor: Double){
+    conta.saldo += valor
 }
 
 class Conta {
