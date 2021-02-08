@@ -1,5 +1,32 @@
 fun main() {
     println("Bem vindo ao Bytebank")
+    //testaLacos()
+    var contaAriel = Conta()
+    contaAriel.titular = "Ariel"
+    contaAriel.numeroConta = 5321
+    contaAriel.saldo = 129.45
+
+    var contaCamily = Conta()
+    contaCamily.titular = "Camily"
+    contaCamily.numeroConta = 5920
+    contaCamily.saldo = 9024.91
+
+    println(contaAriel.titular)
+    println(contaAriel.numeroConta)
+    println(contaAriel.saldo)
+
+    println(contaCamily.titular)
+    println(contaCamily.numeroConta)
+    println(contaCamily.saldo)
+}
+
+class Conta {
+    var titular = ""
+    var numeroConta = 0
+    var saldo = 0.0
+}
+
+fun testaLacos(){
     var i = 0
     while(i < 5){
         val titular: String = "Ariel $i"
