@@ -1,5 +1,6 @@
 fun main() {
     println("Bem vindo ao Bytebank")
+<<<<<<< HEAD
     //testaLacos()
     var contaAriel = Conta()
     contaAriel.titular = "Ariel"
@@ -40,6 +41,8 @@ class Conta {
 }
 
 fun testaLacos(){
+=======
+>>>>>>> parent of f000b52... POO :coffee:
     var i = 0
     while(i < 5){
         val titular: String = "Ariel $i"
