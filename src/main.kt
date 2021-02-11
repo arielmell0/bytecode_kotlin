@@ -1,6 +1,6 @@
 fun main() {
     println("Bem vindo ao Bytebank")
-<<<<<<< HEAD
+
     //testaLacos()
     var contaAriel = Conta()
     contaAriel.titular = "Ariel"
@@ -21,28 +21,38 @@ fun main() {
     println(contaCamily.saldo)
 
     println("Depositando na conta do Ariel")
-    deposita(contaAriel, 100.0)
+    contaAriel.deposita(100.0)
     println(contaAriel.saldo)
+    contaAriel.saca(500.0)
+    println("Seu novo saldo é: ${contaAriel.saldo}")
 
     println("Depositando na conta da Camily")
-    deposita(contaCamily, 300.0)
+    contaCamily.deposita(300.0)
     println(contaCamily.saldo)
 
-}
-
-fun deposita(conta: Conta, valor: Double){
-    conta.saldo += valor
 }
 
 class Conta {
     var titular = ""
     var numeroConta = 0
     var saldo = 0.0
+
+    fun deposita(valor: Double){
+        this.saldo += valor
+    }
+
+    fun saca(valor: Double){
+        if(valor <= saldo){
+            saldo -= valor
+        } else {
+            println("Você não possui saldo o suficiente para essa transação.")
+        }
+    }
+
+
 }
 
 fun testaLacos(){
-=======
->>>>>>> parent of f000b52... POO :coffee:
     var i = 0
     while(i < 5){
         val titular: String = "Ariel $i"
