@@ -55,7 +55,7 @@ fun testaLacos(){
         println()
         i++
     }
-
+//    Alternativa ao i < 5
 //    for (i in 5 downTo 1) {
 //        val titular: String = "Alex $i"
 //        val numeroConta: Int = 1000 + i
