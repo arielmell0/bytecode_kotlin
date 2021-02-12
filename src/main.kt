@@ -5,12 +5,12 @@ fun main() {
     var contaAriel = Conta()
     contaAriel.titular = "Ariel"
     contaAriel.numeroConta = 5321
-    contaAriel.saldo = 129.45
+    contaAriel.saldo = 150.0
 
     var contaCamily = Conta()
     contaCamily.titular = "Camily"
     contaCamily.numeroConta = 5920
-    contaCamily.saldo = 9024.91
+    contaCamily.saldo = 2000.0
 
     println(contaAriel.titular)
     println(contaAriel.numeroConta)
@@ -30,6 +30,10 @@ fun main() {
     contaCamily.deposita(300.0)
     println(contaCamily.saldo)
 
+    println("Transferindo da conta da Camily")
+    contaCamily.trasferir(1000.0, contaAriel)
+    println("Seu saldo atual é ${contaCamily.saldo}")
+
 }
 
 class Conta {
@@ -47,6 +51,15 @@ class Conta {
         } else {
             println("Você não possui saldo o suficiente para essa transação.")
         }
+    }
+
+    fun trasferir(valor: Double, destino: Conta): Boolean{
+        if(this.saldo >= valor){
+            saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+        return false
     }
 
 
