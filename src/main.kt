@@ -37,9 +37,9 @@ fun main() {
 }
 
 class Conta {
-    var titular = ""
-    var numeroConta = 0
-    var saldo = 0.0
+    private var titular = ""
+    private var numeroConta = 0
+    private var saldo = 0.0
 
     fun deposita(valor: Double){
         this.saldo += valor
