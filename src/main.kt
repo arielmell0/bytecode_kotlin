@@ -5,40 +5,40 @@ fun main() {
     var contaAriel = Conta()
     contaAriel.titular = "Ariel"
     contaAriel.numeroConta = 5321
-    contaAriel.saldo = 150.0
+    contaAriel.setSaldo(150.0)
 
     var contaCamily = Conta()
     contaCamily.titular = "Camily"
     contaCamily.numeroConta = 5920
-    contaCamily.saldo = 2000.0
+    contaCamily.setSaldo(-1500.0)
 
     println(contaAriel.titular)
     println(contaAriel.numeroConta)
-    println(contaAriel.saldo)
+    println(contaAriel.getSaldo())
 
     println(contaCamily.titular)
     println(contaCamily.numeroConta)
-    println(contaCamily.saldo)
+    println(contaCamily.getSaldo())
 
     println("Depositando na conta do Ariel")
     contaAriel.deposita(100.0)
-    println(contaAriel.saldo)
+    println(contaAriel.getSaldo())
     contaAriel.saca(500.0)
-    println("Seu novo saldo é: ${contaAriel.saldo}")
+    println("Seu novo saldo é: ${contaAriel.getSaldo()}")
 
     println("Depositando na conta da Camily")
     contaCamily.deposita(300.0)
-    println(contaCamily.saldo)
+    println(contaCamily.getSaldo())
 
     println("Transferindo da conta da Camily")
     contaCamily.trasferir(1000.0, contaAriel)
-    println("Seu saldo atual é ${contaCamily.saldo}")
+    println("Seu saldo atual é ${contaCamily.getSaldo()}")
 
 }
 
 class Conta {
-    private var titular = ""
-    private var numeroConta = 0
+    var titular = ""
+    var numeroConta = 0
     private var saldo = 0.0
 
     fun deposita(valor: Double){
@@ -60,6 +60,16 @@ class Conta {
             return true
         }
         return false
+    }
+
+    fun setSaldo(valor: Double){
+        if(valor > 0){
+            this.saldo = valor
+        }
+    }
+
+    fun getSaldo(): Double{
+        return this.saldo
     }
 
 
