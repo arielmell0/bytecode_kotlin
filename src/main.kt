@@ -2,10 +2,10 @@ fun main() {
     println("Bem vindo ao Bytebank")
 
     //testaLacos()
-    var contaAriel = Conta("Ariel", 1000)
+    var contaAriel = Conta(titular = "Ariel", numeroConta = 1000)
     contaAriel.deposita(150.0)
 
-    var contaCamily = Conta("Camily", 1001)
+    var contaCamily = Conta(numeroConta = 1001, titular = "Camily Lummertz")
     contaCamily.deposita(2000.0)
 
     println(contaAriel.titular)
@@ -17,24 +17,24 @@ fun main() {
     println(contaCamily.saldo)
 
     println("Depositando na conta do Ariel")
-    contaAriel.deposita(100.0)
+    contaAriel.deposita(valor = 200.0)
     println(contaAriel.saldo)
     contaAriel.saca(500.0)
     println("Seu novo saldo é: ${contaAriel.saldo}")
 
     println("Depositando na conta da Camily")
-    contaCamily.deposita(300.0)
+    contaCamily.deposita(valor = 500.0)
     println(contaCamily.saldo)
 
     println("Transferindo da conta da Camily")
-    contaCamily.trasferir(1000.0, contaAriel)
+    contaCamily.trasferir(destino = contaAriel, valor = 60.0)
     println("Seu saldo atual é ${contaCamily.saldo}")
 
 }
 
 class Conta(
     var titular: String,
-    var numeroConta: Int
+    val numeroConta: Int
 ) {
     var saldo = 0.0
         private set
